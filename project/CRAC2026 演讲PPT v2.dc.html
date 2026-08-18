@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>从法规知识到决策智能｜CRAC 2026 · 宣纸版</title>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B120F;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;}
+a{color:#2E7D5B;text-decoration:none;}a:hover{color:#B23A2C;}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<section data-label="封面" data-screen-label="01 封面" data-speaker-notes="大家好，我是朱海东。今天的题目听起来有点大，从法规知识到决策智能。放心，我不讲模型，不讲架构，一页代码都没有。在座各位都是做法规的，我想讲的也是法规的事。先问大家一个问题：今天早上，来会场之前，已经刷过一遍监管官网的，麻烦举个手。【停两秒，看看反应，笑一下再继续】我猜不少。这个动作，就是我今天整场演讲的起点。一条新的监管动态，是怎么被我们发现的，怎么判断跟企业有没有关系，最后怎么变成一封邮件、一份报告、一个具体的合规动作。这两年总有人问我，AI 到底能不能做法规。我的看法是：AI 进入这一行，不会从一个聊天框开始，而是从这些每天重复、又特别吃专业判断的小事开始。今天我会反复提到一个词，Agent。大家不用管技术定义，把它理解成一位数字同事就行。" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;left:0;top:0;bottom:0;width:960px;background:#F2EEE6;"></div>
+  <div style="position:absolute;left:110px;top:84px;display:flex;align-items:center;gap:32px;">
+    <img src="template_assets/image2.png" alt="REACH24H 瑞欧科技" style="height:66px;">
+    <div style="width:1px;height:48px;background:#D8D2C4;"></div>
+    <img src="template_assets/image1.png" alt="CRAC 2026" style="height:56px;">
+  </div>
+  <div style="position:absolute;left:110px;top:300px;width:790px;display:flex;flex-direction:column;gap:38px;">
+    <div style="display:flex;align-items:center;gap:20px;">
+      <div style="width:72px;height:5px;background:#B23A2C;"></div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;letter-spacing:6px;color:#B23A2C;">CRAC CHINA 2026 KEYNOTE</div>
+    </div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:112px;font-weight:900;color:#131A17;line-height:1.14;letter-spacing:2px;">从法规知识<br>到决策智能</div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:500;color:#4A5A52;">可信 AI 赋能全球化学品合规</div>
+  </div>
+  <div style="position:absolute;left:110px;bottom:96px;width:790px;display:flex;flex-direction:column;gap:24px;">
+    <div style="height:1px;background:#D8D2C4;"></div>
+    <div style="display:flex;align-items:flex-end;gap:44px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;">朱海东　Raymond Zhu</div>
+        <div style="font-size:24px;color:#8A8578;white-space:nowrap;">瑞欧科技 REACH24H Consulting Group</div>
+      </div>
+      <div style="width:1px;height:58px;background:#D8D2C4;"></div>
+      <div style="font-size:24px;color:#8A8578;line-height:1.6;white-space:nowrap;">第 18 届全球化学品<br>法规年度论坛</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:1180px;top:280px;width:280px;height:280px;background:#B23A2C;display:flex;align-items:center;justify-content:center;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:98px;font-weight:900;color:#F2EEE6;letter-spacing:6px;">可信</div>
+  </div>
+  <div style="position:absolute;left:1180px;top:620px;right:110px;display:flex;flex-direction:column;gap:22px;">
+    <div style="height:1px;background:rgba(255,255,255,.16);"></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:3px;color:#6F8F80;">POWERED BY</div>
+    <div style="font-size:26px;color:#E7EFEA;line-height:1.9;">瑞查查 ChemCheck<br>合规智库 KnowHub<br>Prowise Agent Runtime</div>
+  </div>
+</section>
+
+<section data-label="目录" data-screen-label="02 目录" data-speaker-notes="今天分四个部分：先讲我们每天真实的法规工作，再讲一个结论凭什么站得住，然后是人机协作怎么完成一件合规工作，最后谈 Agent 时代的自我迭代与人的干预。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-size:24px;letter-spacing:6px;color:#8A8578;">目录　AGENDA</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">02 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:200px;bottom:96px;display:flex;flex-direction:column;">
+    <div style="flex:1;display:flex;align-items:center;gap:56px;border-bottom:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:72px;font-weight:900;color:#D8D2C4;width:110px;flex:none;">壹</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:52px;font-weight:700;color:#131A17;width:700px;flex:none;">从清晨的法规整理开始</div>
+      <div style="flex:1;font-size:26px;color:#8A8578;">从一条监管动态，到一个具体的合规落地</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">04–07</div>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:56px;border-bottom:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:72px;font-weight:900;color:#D8D2C4;width:110px;flex:none;">贰</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:52px;font-weight:700;color:#131A17;width:700px;flex:none;">一个结论，凭什么站得住</div>
+      <div style="flex:1;font-size:26px;color:#8A8578;">找得到 · 看得懂 · 敢下结论</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">09–13</div>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:56px;border-bottom:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:72px;font-weight:900;color:#D8D2C4;width:110px;flex:none;">叁</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:52px;font-weight:700;color:#131A17;width:700px;flex:none;">人机协作：一件工作怎么完成</div>
+      <div style="flex:1;font-size:26px;color:#8A8578;">一条公告到一封回复，中间是怎么走的</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">15–21</div>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:56px;border-bottom:1px solid #B23A2C;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:72px;font-weight:900;color:#E6D3CB;width:110px;flex:none;">肆</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:52px;font-weight:700;color:#B23A2C;width:700px;flex:none;">Agent 时代与团队沉淀</div>
+      <div style="flex:1;font-size:26px;color:#8A8578;">自我迭代、人的干预与辅助决策</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">23–25</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="章节 壹" data-screen-label="03 章节壹" data-speaker-notes="第一部分，从一个再普通不过的早晨说起。" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;right:60px;top:-80px;font-family:'Noto Serif SC',serif;font-size:760px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;">壹</div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:6px;color:#6F8F80;">CHAPTER ONE</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">03 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;bottom:150px;display:flex;flex-direction:column;gap:34px;">
+    <div style="width:88px;height:6px;background:#B23A2C;"></div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:88px;font-weight:900;color:#FFFFFF;line-height:1.2;">从清晨的法规整理开始</div>
+    <div style="font-size:28px;color:#8FB3A2;">从一条监管动态，到一个具体的合规落地</div>
+  </div>
+</section>
+
+<section data-label="一杯咖啡" data-screen-label="04 一杯咖啡" data-speaker-notes="想象一个再普通不过的早晨。咖啡刚泡上，你已经开了七八个网页，开始盯各国官方渠道。ECHA、US EPA、韩国 MoE、日本 METI、国内固管中心，可能还有某个刚改版的官网，搜索框换了位置，你得重新找。【这段语速放慢，让大家在脑子里看见自己的桌面】看左边，这不是一天一两条。每天几十条，来自十几个渠道，而且类型完全不一样：有的是新清单发布，有的是清单扩项，有的是注册要求改了，有的只是把截止期往后挪了三个月，但就是这三个月，能决定客户今年能不能发货。难的不是看到，是看到之后。右边这几条，每一条更新都得逐条过一遍：正式发布还是征求意见稿？生效日、过渡期、截止日到底是哪天？管的是物质、混合物还是成品？最后还得回答最实际的那一句：哪些客户受影响，要不要现在就告诉他。几十条乘以这四个问题，就是一个上午。这样的早晨，瑞欧的同事过了十几年。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">壹</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">每天清晨的法规工作</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">04 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">一杯咖啡背后的全球法规工作</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">难的不是看到，<br>是看到之后</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:320px;bottom:130px;" data-om-raster="">
+    <svg viewBox="0 0 1700 590" style="width:100%;height:100%;" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+      <defs><marker id="p4" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,1 L10,6 L0,11 z" fill="#B23A2C"></path></marker></defs>
+      <text x="0" y="16" font-size="24" font-weight="700" letter-spacing="3" fill="#8A8578">每天几十条 · 来自十几个官方渠道</text>
+      <g>
+        <rect x="0" y="46" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="24" y="84" font-size="24" font-weight="700" fill="#2E7D5B">ECHA</text><text x="24" y="120" font-size="24" fill="#131A17">SVHC 清单新增</text>
+        <rect x="316" y="46" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="340" y="84" font-size="24" font-weight="700" fill="#2E7D5B">US EPA</text><text x="340" y="120" font-size="24" fill="#131A17">PFAS 报告规则</text>
+        <rect x="632" y="46" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="656" y="84" font-size="24" font-weight="700" fill="#2E7D5B">韩国 MoE</text><text x="656" y="120" font-size="24" fill="#131A17">登记要求修订</text>
+        <rect x="0" y="154" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="24" y="192" font-size="24" font-weight="700" fill="#2E7D5B">日本 METI</text><text x="24" y="228" font-size="24" fill="#131A17">化审法名录更新</text>
+        <rect x="316" y="154" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="340" y="192" font-size="24" font-weight="700" fill="#2E7D5B">固管中心</text><text x="340" y="228" font-size="24" fill="#131A17">新物质登记公告</text>
+        <rect x="632" y="154" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="656" y="192" font-size="24" font-weight="700" fill="#2E7D5B">欧盟委员会</text><text x="656" y="228" font-size="24" fill="#131A17">CLP 分类修订</text>
+        <rect x="0" y="262" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="24" y="300" font-size="24" font-weight="700" fill="#2E7D5B">越南 MoIT</text><text x="24" y="336" font-size="24" fill="#131A17">申报截止期延长</text>
+        <rect x="316" y="262" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="340" y="300" font-size="24" font-weight="700" fill="#2E7D5B">加拿大 ECCC</text><text x="340" y="336" font-size="24" fill="#131A17">名录扩项征求意见</text>
+        <rect x="632" y="262" width="300" height="92" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="656" y="300" font-size="24" font-weight="700" fill="#2E7D5B">官方 FAQ</text><text x="656" y="336" font-size="24" fill="#131A17">指南新版问答</text>
+        <rect x="0" y="370" width="300" height="92" fill="#EAE5D9" stroke="#D8D2C4"></rect><text x="24" y="408" font-size="24" font-weight="700" fill="#7C9A8B">英国 HSE</text><text x="24" y="444" font-size="24" fill="#6B7A72">UK REACH 新公告</text>
+        <rect x="316" y="370" width="300" height="92" fill="#EAE5D9" stroke="#D8D2C4"></rect><text x="340" y="408" font-size="24" font-weight="700" fill="#7C9A8B">澳大利亚 AICIS</text><text x="340" y="444" font-size="24" fill="#6B7A72">申报要求调整</text>
+        <rect x="632" y="370" width="300" height="92" fill="#EAE5D9" stroke="#D8D2C4"></rect><text x="656" y="408" font-size="24" font-weight="700" fill="#B0AA9C">……</text><text x="656" y="444" font-size="24" fill="#6B7A72">还有十几个渠道</text>
+      </g>
+      <text x="0" y="524" font-size="25" fill="#6B7A72">类型各不相同：截止期变更、新的注册要求、新清单发布、清单扩项</text>
+      <line x1="968" y1="254" x2="1036" y2="254" stroke="#B23A2C" stroke-width="4" marker-end="url(#p4)"></line>
+      <text x="1052" y="16" font-size="24" font-weight="700" letter-spacing="3" fill="#B23A2C">每一条都要逐条判断</text>
+      <g font-size="27" fill="#3A4A42">
+        <line x1="1052" y1="46" x2="1700" y2="46" stroke="#C9C2B2"></line>
+        <text x="1052" y="106" font-family="'Space Grotesk',sans-serif" font-size="24" font-weight="700" fill="#B23A2C">01</text><text x="1112" y="106">正式发布，还是征求意见稿？</text>
+        <line x1="1052" y1="140" x2="1700" y2="140" stroke="#D8D2C4"></line>
+        <text x="1052" y="200" font-family="'Space Grotesk',sans-serif" font-size="24" font-weight="700" fill="#B23A2C">02</text><text x="1112" y="200">生效日、过渡期、截止日是哪天？</text>
+        <line x1="1052" y1="234" x2="1700" y2="234" stroke="#D8D2C4"></line>
+        <text x="1052" y="294" font-family="'Space Grotesk',sans-serif" font-size="24" font-weight="700" fill="#B23A2C">03</text><text x="1112" y="294">管物质、混合物，还是成品？</text>
+        <line x1="1052" y1="328" x2="1700" y2="328" stroke="#D8D2C4"></line>
+      </g>
+      <rect x="1052" y="352" width="648" height="110" fill="#131A17"></rect>
+      <text x="1084" y="392" font-family="'Space Grotesk',sans-serif" font-size="24" font-weight="700" fill="#5FBF95">04</text>
+      <text x="1084" y="434" font-size="28" font-weight="700" fill="#FFFFFF">哪些客户受影响，需要怎样应对？</text>
+      <text x="1052" y="524" font-size="25" fill="#6B7A72">判完才知道：这一条到底要不要动，动哪里</text>
+    </svg>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:64px;font-family:'Noto Serif SC',serif;font-size:32px;font-weight:700;color:#131A17;">几十条乘以这四个问题，就是一个上午。瑞欧的同事这么过了十几年。</div>
+</section>
+
+<section data-label="从动态到行动" data-screen-label="05 从动态到行动" data-speaker-notes="一条监管消息本身，不是企业能直接用的答案。这一页我想把两个视角放在一起看。中间一列，是企业里做法规的同行拿到这条消息时，心里的问题；右边一列，是我们得给出的答案。三家企业，同一条法规，问题不同，答案也不同。企业 A 在当地有进口主体，他问的是我们是不是合规主体、过渡期够不够；我们得告诉他：是，而且周期大约 6 到 12 个月、要缴行政费、要准备物质鉴别和毒理数据。企业 B 关心的是义务在谁身上、要配合到什么程度；义务主体是进口商或唯一代表，但成分数据和授权得你给，而且得盯住对方的提交节点，否则就是断货。企业 C 最有意思，他问的是真的没事吗、客户审核时怎么说。当前确实无义务，但无义务也是一个结论，得留存判定依据，名录一扩项还得重新判。所以法规人员干的活，不是阅读加翻译。搜索告诉你发生了什么；客户想要的是另外两句话：这跟我有没有关系？接下来该做什么？" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">壹</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">每天清晨的法规工作</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">05 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">同一条消息，不同企业不同结论</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">不是阅读加翻译，<br>是放进企业的具体情况里</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:314px;display:flex;">
+    <div style="flex:1;background:#EAE5D9;padding:18px 10px;text-align:center;font-size:24px;font-weight:700;color:#6B7A72;">收到法规更新</div>
+    <div style="flex:1;background:#EAE5D9;padding:18px 10px;text-align:center;font-size:24px;font-weight:700;color:#6B7A72;border-left:2px solid #F2EEE6;">核查来源与历史</div>
+    <div style="flex:1;background:#E2ECE5;padding:18px 10px;text-align:center;font-size:24px;font-weight:700;color:#2E7D5B;border-left:2px solid #F2EEE6;">判定适用范围</div>
+    <div style="flex:1.1;background:#C7DCD0;padding:18px 10px;text-align:center;font-size:24px;font-weight:700;color:#1E5941;border-left:2px solid #F2EEE6;">拆解合规要求</div>
+    <div style="flex:1.1;background:#131A17;padding:18px 10px;text-align:center;font-size:24px;font-weight:700;color:#FFFFFF;border-left:2px solid #F2EEE6;">给出落地方案</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:420px;bottom:110px;display:flex;flex-direction:column;">
+    <div style="display:flex;gap:40px;padding-bottom:14px;font-size:24px;font-weight:700;letter-spacing:3px;color:#8A8578;">
+      <div style="width:260px;flex:none;">同一条法规，三家企业</div>
+      <div style="width:430px;flex:none;">企业法规专家：我要回答什么</div>
+      <div style="flex:1;color:#B23A2C;">瑞欧：判定结论与落地要求</div>
+    </div>
+    <div style="flex:1;display:flex;gap:40px;align-items:center;border-top:1px solid #C9C2B2;">
+      <div style="width:260px;flex:none;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#131A17;">企业 A</div><div style="font-size:24px;color:#8A8578;">当地设有进口主体</div></div>
+      <div style="width:430px;flex:none;font-size:26px;color:#3A4A42;line-height:1.6;">我们是不是合规主体？<br>过渡期够不够？</div>
+      <div style="flex:1;border-left:6px solid #2E7D5B;background:#E2ECE5;padding:22px 32px;display:flex;flex-direction:column;gap:8px;"><div style="font-size:27px;font-weight:700;color:#131A17;">是合规主体，须在过渡期内完成登记</div><div style="font-size:24px;color:#3A4A42;">周期约 6–12 个月 · 需缴行政费 · 物质鉴别、用途、毒理数据</div></div>
+    </div>
+    <div style="flex:1;display:flex;gap:40px;align-items:center;border-top:1px solid #D8D2C4;">
+      <div style="width:260px;flex:none;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#131A17;">企业 B</div><div style="font-size:24px;color:#8A8578;">经当地进口商供货</div></div>
+      <div style="width:430px;flex:none;font-size:26px;color:#3A4A42;line-height:1.6;">义务到底在谁身上？<br>我们要配合到什么程度？</div>
+      <div style="flex:1;border-left:6px solid #2E7D5B;background:#E2ECE5;padding:22px 32px;display:flex;flex-direction:column;gap:8px;"><div style="font-size:27px;font-weight:700;color:#131A17;">义务主体是进口商或唯一代表</div><div style="font-size:24px;color:#3A4A42;">需配合提供成分数据与授权 · 盯住对方提交节点，否则断货</div></div>
+    </div>
+    <div style="flex:1;display:flex;gap:40px;align-items:center;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;">
+      <div style="width:260px;flex:none;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#131A17;">企业 C</div><div style="font-size:24px;color:#8A8578;">产品不在管控范围</div></div>
+      <div style="width:430px;flex:none;font-size:26px;color:#3A4A42;line-height:1.6;">真的没事吗？<br>客户审核时怎么说？</div>
+      <div style="flex:1;border-left:6px solid #B23A2C;background:#F5E9E4;padding:22px 32px;display:flex;flex-direction:column;gap:8px;"><div style="font-size:27px;font-weight:700;color:#131A17;">当前无义务，但这也是要留证据的结论</div><div style="font-size:24px;color:#3A4A42;">留存判定依据以备客户审核 · 名录扩项时需重新判定</div></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:56px;font-size:25px;color:#6B7A72;">搜索告诉你发生了什么；客户想问的是：这跟我有没有关系？接下来该做什么？</div>
+</section>
+
+<section data-label="瑞查查是攒出来的" data-screen-label="06 瑞查查" data-speaker-notes="很多人第一次看瑞查查，以为它是某一年立了个项，集中收了一批法规，就建成了。不是的。它是攒出来的。右边这几条，在座的应该都干过：官网一改版，收藏夹里的链接全废；公告只有当地语言，附件还是扫描件；修订件不发全文，只写第几条改为，你得自己拼回完整版；名录藏在一个 Excel 附件里；而真正的实操要点，往往不在法规正文里，藏在官方问答和 FAQ 里。这些活每天都得有人做。新法规不断进来，旧法规不断修订，专家的理解也一点点补齐。一天一天记下来、理下来，才有了今天的瑞查查。难的不是开始，是坚持。别人要追，追的不是技术，是时间。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">壹</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">每天清晨的法规工作</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">06 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;top:210px;width:860px;display:flex;flex-direction:column;gap:44px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:80px;font-weight:900;color:#131A17;line-height:1.25;">今天看到的数据库，<br>是很多个普通<br>工作日攒起来的。</div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <div style="width:72px;height:5px;background:#B23A2C;"></div>
+      <div style="font-size:27px;color:#3A4A42;">别人要追，<strong style="color:#B23A2C;">追的不是技术，是时间</strong></div>
+    </div>
+    <div style="display:flex;gap:0;">
+      <div style="flex:1;border-top:2px solid #131A17;padding-top:18px;padding-right:24px;"><div style="font-size:24px;color:#8A8578;">持续监控</div></div>
+      <div style="flex:1;border-top:2px solid #131A17;padding-top:18px;padding-right:24px;"><div style="font-size:24px;color:#8A8578;">结构化</div></div>
+      <div style="flex:1;border-top:2px solid #131A17;padding-top:18px;padding-right:24px;"><div style="font-size:24px;color:#8A8578;">版本关联</div></div>
+      <div style="flex:1;border-top:2px solid #2E7D5B;padding-top:18px;padding-right:24px;"><div style="font-size:24px;color:#2E7D5B;">专家审核</div></div>
+      <div style="flex:1;border-top:2px solid #B23A2C;padding-top:18px;"><div style="font-size:24px;color:#B23A2C;">可追溯留痕</div></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:1050px;right:110px;top:210px;bottom:80px;display:flex;flex-direction:column;">
+    <div style="font-size:24px;font-weight:700;letter-spacing:4px;color:#B23A2C;padding-bottom:18px;">这些活，在座的都干过</div>
+    <div style="flex:1;display:flex;align-items:center;border-top:1px solid #C9C2B2;font-size:27px;color:#3A4A42;line-height:1.55;">官网一改版，收藏夹里的链接全废</div>
+    <div style="flex:1;display:flex;align-items:center;border-top:1px solid #D8D2C4;font-size:27px;color:#3A4A42;line-height:1.55;">公告只有当地语言，附件还是扫描件</div>
+    <div style="flex:1;display:flex;align-items:center;border-top:1px solid #D8D2C4;font-size:27px;color:#3A4A42;line-height:1.55;">修订件不发全文，只写「第 X 条改为……」</div>
+    <div style="flex:1;display:flex;align-items:center;border-top:1px solid #D8D2C4;font-size:27px;color:#3A4A42;line-height:1.55;">名录藏在一个 Excel 附件里</div>
+    <div style="flex:1;display:flex;align-items:center;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;font-size:27px;color:#131A17;font-weight:700;line-height:1.55;">真正的实操要点，藏在官方问答和 FAQ 里</div>
+  </div>
+</section>
+
+<section data-label="瑞查查界面" data-screen-label="07 瑞查查界面" data-speaker-notes="这是瑞查查的实际界面。【此处放系统截图，讲一句现场看到的重点即可】法规原文、发布机构、层级、现行状态、关联名录、修订版本，都在一个地方；单篇问答的回答会带引用，点一下就跳回原文。右边这六块是它对外的能力。客户最常用的是后两个，按 CAS 或物质名反查它涉及哪些名录义务，以及就某一部法规直接提问。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">壹</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">每天清晨的法规工作</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">07 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">瑞查查 · 全球化学品法规数据库</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">回答带原文引用，<br>点一下就跳回法规正文</div>
+  </div>
+  <div style="position:absolute;left:110px;top:320px;bottom:80px;width:1000px;background:#FAF7F0;border:1px solid #D8D2C4;">
+    <image-slot id="v2-shot-chemcheck" shape="rect" fit="contain" placeholder="拖入瑞查查截图（全局搜索 / 法规详情 / 单篇问答）"></image-slot>
+  </div>
+  <div style="position:absolute;left:1160px;right:110px;top:320px;bottom:80px;display:flex;flex-direction:column;">
+    <div style="flex:1;border-top:1px solid #C9C2B2;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">全球法规库</div><div style="font-size:24px;color:#8A8578;">多国家法规、名录与标准，标注现行状态</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">法规详情</div><div style="font-size:24px;color:#8A8578;">发布机构、层级、发布与实施日期、原文附件</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">版本与关联</div><div style="font-size:24px;color:#8A8578;">修订版本链、相关法规、关联名录与物质</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">管理清单</div><div style="font-size:24px;color:#8A8578;">按 CAS 或物质名，查它涉及哪些名录义务</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#B23A2C;">专家解读</div><div style="font-size:24px;color:#3A4A42;">条款解读、QA 宝典与实操判断要点</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#B23A2C;">单篇问答</div><div style="font-size:24px;color:#3A4A42;">就某一部法规提问，回答带原文引用</div></div>
+  </div>
+</section>
+
+<section data-label="章节 贰" data-screen-label="08 章节贰" data-speaker-notes="第二部分，换个角度：不讲 AI 怎么建的，讲我们法规人自己怎么判断，找得到、看得懂、敢不敢下结论。" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;right:60px;top:-80px;font-family:'Noto Serif SC',serif;font-size:760px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;">贰</div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:6px;color:#6F8F80;">CHAPTER TWO</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">08 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;bottom:150px;display:flex;flex-direction:column;gap:34px;">
+    <div style="width:88px;height:6px;background:#B23A2C;"></div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:88px;font-weight:900;color:#FFFFFF;line-height:1.2;">一个结论，凭什么站得住</div>
+    <div style="font-size:28px;color:#8FB3A2;letter-spacing:2px;">找得到 · 看得懂 · 敢下结论</div>
+  </div>
+</section>
+
+<section data-label="AI替不了依据" data-screen-label="09 AI替不了依据" data-speaker-notes="这一页是我今天最想说的一件事，而且它不是 AI 的道理，是我们做法规本来就懂的道理。我们这行，从来不是比谁读得快、谁英文好。一个结论敢不敢发出去，取决于你手上的依据硬不硬。现在把这件事换到 AI 上，道理一模一样。模型确实越来越强、越来越便宜，但那是谁都买得到的东西。同一个模型，你丢给它一堆没拆过的 PDF，它给你的东西看着像答案，但你不敢签字；你给它一个拆到条款、每句话都回得到原文的法规库，它给你的才是敢发给客户的判断。右边三条，是瑞欧法规数据库真正值钱的地方。【这页说慢一点，是全场的核心观点】" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;left:620px;bottom:-70px;font-family:'Noto Serif SC',serif;font-size:520px;font-weight:900;color:rgba(178,58,44,.11);line-height:1;">据</div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#E07A63;">贰</div><div style="font-size:24px;letter-spacing:4px;color:rgba(255,255,255,.5);">一个结论，凭什么站得住</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">09 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;top:210px;width:1030px;display:flex;flex-direction:column;gap:40px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:104px;font-weight:900;color:#FFFFFF;line-height:1.2;">AI 替不了「依据」</div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:40px;font-weight:500;color:#8FB3A2;line-height:1.65;">模型谁都买得到，<br>能写进 Letter 的依据买不到。</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:90px;display:flex;flex-direction:column;">
+    <div style="border-top:1px solid rgba(255,255,255,.18);padding:26px 0;display:flex;gap:30px;align-items:baseline;"><div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#8FB3A2;width:34px;flex:none;">01</div><div style="font-size:28px;color:rgba(255,255,255,.82);">同一个模型 ＋ 一堆没拆过的 PDF　→　看着像答案，你不敢签字</div></div>
+    <div style="border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:26px 0;display:flex;gap:30px;align-items:baseline;"><div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#E07A63;width:34px;flex:none;">02</div><div style="font-size:28px;color:#FFFFFF;font-weight:700;">同一个模型 ＋ 拆到条款、能回原文的法规库　→　敢发给客户的判断</div></div>
+  </div>
+  <div style="position:absolute;right:110px;top:330px;width:520px;display:flex;flex-direction:column;gap:2px;">
+    <div style="background:#1E2A25;padding:32px 38px;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:32px;font-weight:700;color:#FFFFFF;">AI 看得懂的法规</div><div style="font-size:24px;color:#8FB3A2;">拆到条、款、附件，不是一整篇 PDF</div></div>
+    <div style="background:#1E2A25;padding:32px 38px;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:32px;font-weight:700;color:#FFFFFF;">法规之间的关系</div><div style="font-size:24px;color:#8FB3A2;">上位法、修订链、实施指南都接得上</div></div>
+    <div style="background:#B23A2C;padding:32px 38px;display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Noto Serif SC',serif;font-size:32px;font-weight:700;color:#FFFFFF;">法规背后的经验</div><div style="font-size:24px;color:rgba(255,255,255,.85);">瑞欧做过的判断与实操要点</div></div>
+  </div>
+</section>
+
+<section data-label="三关" data-screen-label="10 三关" data-speaker-notes="那质量靠什么保证？先别想 AI。先想想我们自己。一份报告发出去之前，内审会问你什么？就这三件事。第一，讲得出依据：你这句话根据哪部法、哪一条？两年后客户审核、监管问起来，还得答得上。第二，说得清把握：法规明写的、需要推断的、目前没有规定的，这三种得分开说。大家都写过基于现有信息初步判断这种句子，那不是含糊，那是专业。第三，改得回来：一份新指南出来，口径变了，你得能改在那一个点上，而不是整个项目推倒重来；而且改一次，团队以后都按新口径。我们对 AI 的要求，一字不改，就是这三条。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">贰</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">一个结论，凭什么站得住</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">10 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">一个结论要站得住，得过三关</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">这三条不是为 AI 定的，<br>是我们本来就这么要求自己</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:330px;bottom:290px;display:grid;grid-template-columns:1fr 1fr 1fr;">
+    <div style="border-top:6px solid #131A17;padding:36px 52px 0 0;display:flex;flex-direction:column;gap:22px;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#D8D2C4;line-height:1;">壹</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#131A17;">讲得出依据</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">结论的每一句，都能指回哪部法、哪一条。客户问「你根据什么」，两年后也答得上。</div>
+    </div>
+    <div style="border-top:6px solid #131A17;padding:36px 52px 0 52px;display:flex;flex-direction:column;gap:22px;border-left:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#D8D2C4;line-height:1;">贰</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#131A17;">说得清把握</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">法规明写的、需要推断的、目前没有规定的，要分开说。一律说得很确定，才是最危险的。</div>
+    </div>
+    <div style="border-top:6px solid #B23A2C;padding:36px 0 0 52px;display:flex;flex-direction:column;gap:22px;border-left:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#E6D3CB;line-height:1;">叁</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#B23A2C;">改得回来</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">口径变了，能改在那一个点上，不用整条重来；而且改一次，以后都按新口径。</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:110px;background:#131A17;padding:36px 48px;box-sizing:border-box;font-family:'Noto Serif SC',serif;font-size:38px;font-weight:700;color:#FFFFFF;">拿不准的地方要写出来，这是法规人的基本功</div>
+  <div style="position:absolute;left:110px;right:110px;bottom:60px;font-size:24px;color:#8A8578;">我们对 AI 的要求，就是这三条。具体怎么实现属于内部做法，今天不展开。</div>
+</section>
+
+<section data-label="三层台阶" data-screen-label="11 三层台阶" data-speaker-notes="把几千份 PDF 喂给大模型，技术上不难，一个周末就能搞定。但那只停在第一层：找得到。我们干这行都知道，找得到最简单。难的是第二层，看得懂，这条到底管物质、混合物还是成品？责任主体是谁？吨位和浓度阈值是多少？过渡期到哪天？有没有豁免？把这些拆出来，才叫看得懂。最难的是第三层，敢不敢下结论。客户只给了一个产品名，你敢直接给准入结论吗？不敢。得先问用途，问浓度，问供应链角色。哪些能先给初步意见，哪些必须资深专家看过才能出门。这些判断，法规原文里一个字都没有。法规文件告诉 AI 规定是什么；瑞欧这些年做过的项目，告诉 AI 拿到一个具体问题时该怎么干活。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">贰</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">一个结论，凭什么站得住</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">11 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">找得到最容易，敢下结论最难</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">三层台阶，<br>越往上越难复制</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:310px;bottom:110px;display:flex;flex-direction:column;gap:18px;">
+    <div style="flex:1;display:flex;">
+      <div style="width:360px;flex:none;background:#EAE5D9;display:flex;flex-direction:column;justify-content:center;padding:0 44px;gap:6px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:46px;font-weight:900;color:#8A8578;">找得到</div>
+        <div style="font-size:24px;letter-spacing:3px;color:#B0AA9C;">原始信息｜一个周末就能做完</div>
+      </div>
+      <div style="flex:1;background:#FAF7F0;border:1px solid #D8D2C4;border-left:none;display:flex;align-items:center;padding:0 48px;font-size:28px;color:#3A4A42;line-height:1.7;">公告原文 · PDF 扫描件 · 名录 Excel 附件 · 官方 FAQ · 修订告知</div>
+    </div>
+    <div style="flex:1;display:flex;margin-left:110px;">
+      <div style="width:360px;flex:none;background:#C7DCD0;display:flex;flex-direction:column;justify-content:center;padding:0 44px;gap:6px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:46px;font-weight:900;color:#1E5941;">看得懂</div>
+        <div style="font-size:24px;letter-spacing:3px;color:#2E7D5B;">结构化知识｜要拆到条款</div>
+      </div>
+      <div style="flex:1;background:#E2ECE5;border:1px solid #B9D4C4;border-left:none;display:flex;align-items:center;padding:0 48px;font-size:28px;color:#25473A;line-height:1.7;">适用范围（物质／混合物／成品） · 责任主体 · 吨位与浓度阈值 · 生效日与过渡期 · 豁免情形 · 关联名录与版本链</div>
+    </div>
+    <div style="flex:1;display:flex;margin-left:220px;">
+      <div style="width:360px;flex:none;background:#B23A2C;display:flex;flex-direction:column;justify-content:center;padding:0 44px;gap:6px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:46px;font-weight:900;color:#FFFFFF;">敢下结论</div>
+        <div style="font-size:24px;letter-spacing:3px;color:rgba(255,255,255,.78);">专业经验｜法规里一个字都没有</div>
+      </div>
+      <div style="flex:1;background:#131A17;display:flex;align-items:center;padding:0 48px;font-size:28px;color:rgba(255,255,255,.92);line-height:1.7;">只给商品名时先问什么 · 用途和浓度怎么改变结论 · 什么时候只能给初步意见 · 何时必须升级专家</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:56px;font-size:25px;color:#6B7A72;">法规文件告诉 AI <strong style="color:#131A17;">规定是什么</strong>；瑞欧的项目经验告诉 AI <strong style="color:#B23A2C;">该怎么干活</strong>。</div>
+</section>
+
+<section data-label="一张网" data-screen-label="12 一张网" data-speaker-notes="在传统数据库里，一条法规就是一行记录。标题，国家，日期，附件。但真用它的时候，谁会只看这一行？它上面有上位法，后面跟着修订案，旁边挂着技术标准。监管机构还会不断用指南、FAQ、执法案例去解释它。它还连着具体的物质、用途、吨位、供应链角色和义务。所以在我们的体系里，法规不再是一份份孤立的文件，是一张网。这一点对 AI 特别重要。只读一个条款，AI 的回答可能字面上对，实际只对了一半。它得看见整张网，才回答得了专业问题。最下面那一排是别人最难抄的：我们做过的项目、专家的解读、客户真实问过的问题。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">贰</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">一个结论，凭什么站得住</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">12 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">在我们这儿，一条法规不是一份文件</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">只读一个条款，<br>回答可能字面对、实际只对一半</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:310px;bottom:60px;" data-om-raster="">
+    <svg viewBox="0 0 1700 660" style="width:100%;height:100%;" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+      <g font-size="24" font-weight="700">
+        <rect x="0" y="0" width="14" height="14" fill="#2E7D5B"></rect><text x="26" y="14" fill="#6B7A72">法规本体</text>
+        <rect x="200" y="0" width="14" height="14" fill="#C9C2B2"></rect><text x="226" y="14" fill="#6B7A72">关联规则</text>
+        <rect x="400" y="0" width="14" height="14" fill="#B23A2C"></rect><text x="426" y="14" fill="#B23A2C">瑞欧的经验，最难复制的一层</text>
+      </g>
+      <g stroke="#C9C2B2" stroke-width="1.5">
+        <line x1="690" y1="310" x2="346" y2="160"></line><line x1="690" y1="310" x2="346" y2="310"></line><line x1="690" y1="310" x2="346" y2="460"></line>
+        <line x1="1010" y1="310" x2="1354" y2="130"></line><line x1="1010" y1="310" x2="1354" y2="260"></line><line x1="1010" y1="310" x2="1354" y2="390"></line><line x1="1010" y1="310" x2="1354" y2="520"></line>
+      </g>
+      <g fill="none" stroke="#D9A79C" stroke-width="2" stroke-dasharray="8 8">
+        <path d="M850,386 V470 H500 V530"></path><path d="M850,386 V470 H850 V530"></path><path d="M850,386 V470 H1200 V530"></path>
+      </g>
+      <g font-size="25" font-weight="700" text-anchor="middle" fill="#131A17">
+        <rect x="0" y="112" width="346" height="96" fill="#E2ECE5" stroke="#B9D4C4"></rect><text x="173" y="168">发布机关与效力层级</text>
+        <rect x="0" y="262" width="346" height="96" fill="#E2ECE5" stroke="#B9D4C4"></rect><text x="173" y="318">条款（切分到条、款）</text>
+        <rect x="0" y="412" width="346" height="96" fill="#E2ECE5" stroke="#B9D4C4"></rect><text x="173" y="468">修订与版本链</text>
+        <rect x="1354" y="82" width="346" height="96" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="1527" y="138">相关法规</text>
+        <rect x="1354" y="212" width="346" height="96" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="1527" y="268">实施指南与官方 QA</text>
+        <rect x="1354" y="342" width="346" height="96" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="1527" y="398">关联名录与物质</text>
+        <rect x="1354" y="472" width="346" height="96" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="1527" y="528">义务与豁免情形</text>
+      </g>
+      <g font-size="25" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+        <rect x="360" y="530" width="280" height="96" fill="#B23A2C"></rect><text x="500" y="586">做过的历史项目</text>
+        <rect x="710" y="530" width="280" height="96" fill="#B23A2C"></rect><text x="850" y="586">专家解读</text>
+        <rect x="1060" y="530" width="280" height="96" fill="#B23A2C"></rect><text x="1200" y="586">客户问过的问题</text>
+      </g>
+      <rect x="690" y="234" width="320" height="152" fill="#131A17"></rect>
+      <text x="850" y="302" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="40" font-weight="900" fill="#FFFFFF">一条法规</text>
+      <text x="850" y="346" text-anchor="middle" font-size="24" fill="#8FB3A2">它连着的东西，才是答案</text>
+    </svg>
+  </div>
+</section>
+
+<section data-label="做事的方式" data-screen-label="13 做事的方式" data-speaker-notes="这两年大模型进步很快。阅读、翻译、总结，各家都不差，而且会越来越便宜。但有一件事，模型自己学不会：瑞欧是怎么干活的。它不知道我们查东西先信哪个来源。不知道客户只报一个产品名的时候，为什么不能直接给市场准入结论。也不知道一部法规虽然点名了某个物质，放进客户的具体用途里，可能压根不适用。这些内容，任何法规原文里都找不到。它们在老同事的脑子里，在一个个做完的项目里，在跟监管机构的一次次沟通里。我们现在做的，就是把这些一点点教给 Agent。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:1000px;right:0;top:0;bottom:0;background:#131A17;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">贰</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">一个结论，凭什么站得住</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">13 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;width:830px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:1000px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;width:800px;top:200px;font-family:'Noto Serif SC',serif;font-size:64px;font-weight:900;color:#131A17;line-height:1.25;">模型学得会读法规，<br>学不会我们怎么干活</div>
+  <div style="position:absolute;left:110px;width:740px;top:440px;display:flex;flex-direction:column;">
+    <div style="font-size:24px;font-weight:700;letter-spacing:4px;color:#8A8578;padding-bottom:16px;">通用模型天然会的</div>
+    <div style="padding:20px 0;border-top:1px solid #C9C2B2;font-size:28px;color:#6B7A72;">阅读总结</div>
+    <div style="padding:20px 0;border-top:1px solid #D8D2C4;font-size:28px;color:#6B7A72;">翻译</div>
+    <div style="padding:20px 0;border-top:1px solid #D8D2C4;font-size:28px;color:#6B7A72;">语言生成</div>
+    <div style="padding:20px 0;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;font-size:28px;color:#6B7A72;">一般性知识</div>
+    <div style="padding-top:22px;font-size:24px;color:#B0AA9C;">各家都不差，而且会越来越便宜</div>
+  </div>
+  <div style="position:absolute;left:1090px;right:110px;top:200px;display:flex;flex-direction:column;">
+    <div style="font-size:24px;font-weight:700;letter-spacing:4px;color:#E07A63;padding-bottom:16px;">瑞欧要教给 Agent 的</div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);font-size:28px;color:#FFFFFF;">去哪找权威来源，怎么判断版本和效力</div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);font-size:28px;color:#FFFFFF;">什么时候必须追问，不能直接下结论</div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);font-size:28px;color:#FFFFFF;">怎么关联企业产品和具体用途</div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);font-size:28px;color:#FFFFFF;">哪些结论必须升级审核</div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);font-size:28px;color:#FFFFFF;">怎么形成客户可信的结论</div>
+  </div>
+  <div style="position:absolute;left:1090px;right:110px;bottom:80px;border-left:5px solid #B23A2C;padding-left:28px;font-family:'Noto Serif SC',serif;font-size:32px;font-weight:700;color:#8FB3A2;line-height:1.6;">通用能力 ＋ 我们的方法<br>＝ 可以交付的法规 Agent</div>
+</section>
+
+<section data-label="章节 叁" data-screen-label="14 章节叁" data-speaker-notes="第三部分，讲我们和 Agent 到底怎么一起工作，以及一件真实的合规工作，从一条公告到一封能发出去的回复，是怎么走完的。" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;right:60px;top:-80px;font-family:'Noto Serif SC',serif;font-size:760px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;">叁</div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:6px;color:#6F8F80;">CHAPTER THREE</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">14 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;bottom:150px;display:flex;flex-direction:column;gap:34px;">
+    <div style="width:88px;height:6px;background:#B23A2C;"></div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:88px;font-weight:900;color:#FFFFFF;line-height:1.2;">人机协作：<br>一件合规工作怎么完成</div>
+    <div style="font-size:28px;color:#8FB3A2;">它先做完一轮，人来判断</div>
+  </div>
+</section>
+
+<section data-label="分工变了" data-screen-label="15 分工变了" data-speaker-notes="讲产品之前，先讲一件更根本的事：我们和 AI 一起工作的方式，这两年正在变，变的不是工具，是分工。第一个转变，从我问它答到我派它做。以前你打开一个对话框，问一句，它答一句，答完就结束了。现在交代出去的是一件事：这条公告，帮我看看跟哪些客户有关，出个初步分析。交互的单位从一个问题，变成一项任务。第二个转变，从看结论到看过程。这一条在我们这行是硬要求。它查了哪些法规、引用的是哪一条、哪些地方它自己都拿不准，都得摊开给你看。一个看不见过程的答案，再漂亮我们也不能用。第三个转变，从一次性对话到持续在岗。它记得上次的判断，记得你们团队定过的口径，记得这个项目的背景。这三件事加起来，人的位置也就变了。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">15 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">变的不是工具，是分工</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">三个转变，<br>都是我们自己在项目里感觉到的</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:320px;bottom:200px;display:flex;flex-direction:column;">
+    <div style="flex:1;display:flex;align-items:center;gap:48px;border-top:1px solid #C9C2B2;">
+      <div style="width:70px;flex:none;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#B0AA9C;">01</div>
+      <div style="width:300px;flex:none;font-size:30px;color:#8A8578;">我问它答</div>
+      <div style="width:80px;flex:none;font-size:34px;color:#B23A2C;">→</div>
+      <div style="width:340px;flex:none;font-family:'Noto Serif SC',serif;font-size:44px;font-weight:900;color:#131A17;">我派它做</div>
+      <div style="flex:1;font-size:26px;color:#3A4A42;line-height:1.7;">交代出去的是一件事：这条公告跟哪些客户有关，出个初步分析</div>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:48px;border-top:1px solid #D8D2C4;">
+      <div style="width:70px;flex:none;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#B0AA9C;">02</div>
+      <div style="width:300px;flex:none;font-size:30px;color:#8A8578;">看结论</div>
+      <div style="width:80px;flex:none;font-size:34px;color:#B23A2C;">→</div>
+      <div style="width:340px;flex:none;font-family:'Noto Serif SC',serif;font-size:44px;font-weight:900;color:#131A17;">看过程</div>
+      <div style="flex:1;font-size:26px;color:#3A4A42;line-height:1.7;">查了哪些法规、引用哪一条、哪里拿不准，都得摊开</div>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:48px;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;">
+      <div style="width:70px;flex:none;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#B23A2C;">03</div>
+      <div style="width:300px;flex:none;font-size:30px;color:#8A8578;">一次性对话</div>
+      <div style="width:80px;flex:none;font-size:34px;color:#B23A2C;">→</div>
+      <div style="width:340px;flex:none;font-family:'Noto Serif SC',serif;font-size:44px;font-weight:900;color:#B23A2C;">持续在岗</div>
+      <div style="flex:1;font-size:26px;color:#3A4A42;line-height:1.7;">记得上次的判断、团队定过的口径、这个项目的背景</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:70px;background:#131A17;padding:36px 48px;box-sizing:border-box;font-family:'Noto Serif SC',serif;font-size:36px;font-weight:700;color:#FFFFFF;">以前一件事从头到尾自己做完；现在我们定方向、审关键，最后签字的还是人</div>
+</section>
+
+<section data-label="三层记忆" data-screen-label="16 三层记忆" data-speaker-notes="大家现在一听 AI 有记忆都很熟，但很少有人说清楚它到底记了什么。我们把它拆成三层。最外一层是企业是谁，长期不变：你在哪些国家有业务、做什么产品线、在供应链里是生产商还是贸易商。这一层决定了这条公告跟我有没有关系。中间一层是团队的口径，一点点累积起来的：这类问题我们一直是怎么答的，什么情况必须先追问客户，哪些结论必须升级给资深专家。最里面一层是当前这个项目，短期的：背景、已经确认过的事实、已经给过的结论。那记住这些有什么用？三件事：不用每次重新交代背景；换个同事问同一类问题，不会出现两种说法；专家改一次，以后就不再犯同样的错。最后补两句边界：记忆不是它自己在后台悄悄改的，是专家确认过才写进去。项目之间也是隔离的，A 客户的东西不会泄到 B 客户。【最后这句一定要说，台下会有人关心】" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">16 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">它记住的不是聊天记录，是三样东西</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">企业是谁 · 团队的口径<br>· 这个项目做到哪了</div>
+  </div>
+  <div style="position:absolute;left:110px;top:330px;bottom:150px;width:1010px;display:flex;flex-direction:column;gap:16px;">
+    <div style="flex:1;display:flex;">
+      <div style="width:170px;flex:none;background:#131A17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#FFFFFF;">长期</div><div style="font-size:24px;color:#8FB3A2;">几乎不变</div></div>
+      <div style="flex:1;background:#FAF7F0;border:1px solid #D8D2C4;border-left:none;padding:0 42px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;">企业是谁</div>
+        <div style="font-size:25px;color:#3A4A42;">业务地区 · 产品线 · 供应链角色</div>
+        <div style="font-size:24px;color:#B0AA9C;">由企业自己填写和维护</div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;">
+      <div style="width:170px;flex:none;background:#131A17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#FFFFFF;">累积</div><div style="font-size:24px;color:#8FB3A2;">慢慢变多</div></div>
+      <div style="flex:1;background:#E2ECE5;border:1px solid #B9D4C4;border-left:none;padding:0 42px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;">团队的口径</div>
+        <div style="font-size:25px;color:#25473A;">怎么答 · 何时追问 · 何时升级</div>
+        <div style="font-size:24px;color:#2E7D5B;">专家审核通过后才写入</div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;">
+      <div style="width:170px;flex:none;background:#131A17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#FFFFFF;">短期</div><div style="font-size:24px;color:#8FB3A2;">用完归档</div></div>
+      <div style="flex:1;background:#E2ECE5;border:1px solid #B9D4C4;border-left:none;padding:0 42px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+        <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;">这个项目</div>
+        <div style="font-size:25px;color:#25473A;">项目背景 · 已确认的事实与结论</div>
+        <div style="font-size:24px;color:#2E7D5B;">对话中产生，项目结束即归档</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;left:1170px;right:110px;top:330px;display:flex;flex-direction:column;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:900;color:#B23A2C;padding-bottom:20px;">于是有三件事</div>
+    <div style="padding:24px 0;border-top:1px solid #C9C2B2;display:flex;flex-direction:column;gap:6px;"><div style="font-size:28px;font-weight:700;color:#131A17;">不用每次重新交代背景</div><div style="font-size:24px;color:#8A8578;">不用再讲我们做什么产品、卖到哪些国家</div></div>
+    <div style="padding:24px 0;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;gap:6px;"><div style="font-size:28px;font-weight:700;color:#131A17;">换个人问，口径一致</div><div style="font-size:24px;color:#8A8578;">同一类问题，不会因为谁问而两种说法</div></div>
+    <div style="padding:24px 0;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;display:flex;flex-direction:column;gap:6px;"><div style="font-size:28px;font-weight:700;color:#131A17;">专家改一次，下次不再错</div><div style="font-size:24px;color:#8A8578;">每一次审核修改，都成为以后的判断依据</div></div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:64px;font-size:25px;color:#6B7A72;">记忆不是它自己改的，专家确认过才写进去；项目之间彼此隔离，<strong style="color:#B23A2C;">A 客户的东西不会泄到 B 客户</strong>。</div>
+</section>
+
+<section data-label="推理五步" data-screen-label="17 推理五步" data-speaker-notes="大家最想问的应该是：它到底怎么想问题的？我不讲底层怎么实现，就说它走的那几步，你会发现跟我们自己查东西是一个路子。第一步，拆解问题。它不是拿到问题就去搜，而是先判断这类问题必须先确认什么：用途、浓度、供应链角色，这些不清楚，后面全白搞。第二步，查多条法规。注意是多条，不只是点名的那一条。第三步，交叉验证。几处说法对不上的时候，它会比对效力层级和生效日期，以现行版本为准；实在对不上的，它不会自己选一个，而是标出来。第四步，补外部资料。真正的实操要点常常藏在官方问答和执法 FAQ 里。第五步，给结论：判断加逐条依据，再加一张拿不准的清单。整个过程里最重要的一条：任何一步拿不准，它不会硬答，停下来问人。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">17 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">它查东西的路子，跟我们一样</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">先拆问题，再查多条法规，<br>交叉验证过了才下结论</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:330px;bottom:170px;display:flex;gap:2px;">
+    <div style="flex:1;background:#FAF7F0;border-top:6px solid #C9C2B2;padding:34px 30px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:#D8D2C4;line-height:1;">01</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">拆解问题</div>
+      <div style="font-size:25px;color:#3A4A42;line-height:1.8;">先判断这类问题必须先确认什么：用途、浓度、供应链角色</div>
+      <div style="margin-top:auto;border-top:1px solid #D8D2C4;padding-top:18px;"><div style="font-size:24px;letter-spacing:2px;color:#B0AA9C;">这一步的产出</div><div style="font-size:25px;font-weight:700;color:#131A17;margin-top:6px;">一张待确认信息清单</div></div>
+    </div>
+    <div style="flex:1;background:#FAF7F0;border-top:6px solid #C9C2B2;padding:34px 30px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:#D8D2C4;line-height:1;">02</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">查多条法规</div>
+      <div style="font-size:25px;color:#3A4A42;line-height:1.8;">不只看点名的那一条：上位法、修订件、关联名录、实施指南一起摊开</div>
+      <div style="margin-top:auto;border-top:1px solid #D8D2C4;padding-top:18px;"><div style="font-size:24px;letter-spacing:2px;color:#B0AA9C;">这一步的产出</div><div style="font-size:25px;font-weight:700;color:#131A17;margin-top:6px;">一组带出处的法规条款</div></div>
+    </div>
+    <div style="flex:1;background:#E2ECE5;border-top:6px solid #2E7D5B;padding:34px 30px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:#B9D4C4;line-height:1;">03</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">交叉验证</div>
+      <div style="font-size:25px;color:#25473A;line-height:1.8;">说法对不上时，比对效力层级与生效日期，以现行版本为准</div>
+      <div style="margin-top:auto;border-top:1px solid #B9D4C4;padding-top:18px;"><div style="font-size:24px;letter-spacing:2px;color:#2E7D5B;">这一步的产出</div><div style="font-size:25px;font-weight:700;color:#131A17;margin-top:6px;">冲突点单独标出来</div></div>
+    </div>
+    <div style="flex:1;background:#E2ECE5;border-top:6px solid #2E7D5B;padding:34px 30px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:#B9D4C4;line-height:1;">04</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">补外部资料</div>
+      <div style="font-size:25px;color:#25473A;line-height:1.8;">正文没写清的，去官方问答、执法 FAQ、公告附件里找实操要点</div>
+      <div style="margin-top:auto;border-top:1px solid #B9D4C4;padding-top:18px;"><div style="font-size:24px;letter-spacing:2px;color:#2E7D5B;">这一步的产出</div><div style="font-size:25px;font-weight:700;color:#131A17;margin-top:6px;">可引用的官方口径</div></div>
+    </div>
+    <div style="flex:1.15;background:#131A17;border-top:6px solid #B23A2C;padding:34px 30px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:#E07A63;line-height:1;">05</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#FFFFFF;">给出结论</div>
+      <div style="font-size:25px;color:rgba(255,255,255,.9);line-height:1.8;">判断 ＋ 逐条依据 ＋ 一张拿不准的清单，明确哪些必须人来确认</div>
+      <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,.2);padding-top:18px;"><div style="font-size:24px;letter-spacing:2px;color:#E07A63;">这一步的产出</div><div style="font-size:25px;font-weight:700;color:#FFFFFF;margin-top:6px;">专家可以直接审的初稿</div></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:60px;font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#B23A2C;">任何一步拿不准，它不会硬答，会停下来问人。</div>
+</section>
+
+<section data-label="KnowHub" data-screen-label="18 KnowHub" data-speaker-notes="这是合规智库的界面。【放截图】它是瑞查查上的企业私库。为什么需要它？因为法规本身不知道你是谁。同一条公告，对不同企业意义完全不同。右边六块就是它把你是谁告诉 Agent 的方式。请注意两个设计：第一，什么进私库是人定的，不是 AI 定的；第二，项目之间是隔离的。这两条听起来不起眼，但企业敢不敢放开用，就看这里。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">18 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">合规智库 KnowHub</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">什么进私库由人定，<br>项目之间彼此隔离</div>
+  </div>
+  <div style="position:absolute;left:110px;top:320px;bottom:80px;width:1000px;background:#FAF7F0;border:1px solid #D8D2C4;">
+    <image-slot id="v2-shot-knowhub" shape="rect" fit="contain" placeholder="拖入合规智库截图（更新订阅 / 总库导入 / 法规问答研判）"></image-slot>
+  </div>
+  <div style="position:absolute;left:1160px;right:110px;top:320px;bottom:80px;display:flex;flex-direction:column;">
+    <div style="flex:1;border-top:1px solid #C9C2B2;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">业务档案</div><div style="font-size:24px;color:#8A8578;">业务地区、产品线、供应链角色</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">更新订阅</div><div style="font-size:24px;color:#8A8578;">按关注面推送动态，不自动入库</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">总库导入</div><div style="font-size:24px;color:#8A8578;">从总库匹配候选，人工确认后入私库</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#131A17;">私库组织</div><div style="font-size:24px;color:#8A8578;">优先级、业务标签、私有备注与专题</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#B23A2C;">项目空间</div><div style="font-size:24px;color:#3A4A42;">按项目隔离资料与结论，可追溯复用</div></div>
+    <div style="flex:1;border-top:1px solid #D8D2C4;border-bottom:1px solid #C9C2B2;display:flex;flex-direction:column;justify-content:center;gap:6px;"><div style="font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:#B23A2C;">问答研判</div><div style="font-size:24px;color:#3A4A42;">法规源 · 对话 · 产出归档三栏工作区</div></div>
+  </div>
+</section>
+
+<section data-label="从清晨到九点" data-screen-label="19 从清晨到九点" data-speaker-notes="来看一个具体场景。假设某天早上，某个国家突然发布一项新的化学品管理要求，限期完成申报。过去的流程大家都熟：先得有人刷到这条消息，通读全文，弄清要求，再一家一家排查哪些客户受影响。消息要是晚看两天，留给客户的时间就少两天。现在的节奏是这样的。前一晚这条公告已经进了总库。清晨，系统对照企业自己填的业务档案，判断它跟这家企业有没有关系。接着 Agent 去接企业自己的资料和历史项目。九点，专家到办公室，打开的不是空白文档，是一份已经成型的初步分析。【清晨和九点这两个节点要念出来，故事感全靠它们】专家做什么？审适用性判断，盯例外情况，把好最后对外的口径。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">19 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">九点，你打开的不是空白文档</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">某国突然发布新的<br>化学品管理要求，限期申报</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:330px;bottom:56px;" data-om-raster="">
+    <svg viewBox="0 0 1700 620" style="width:100%;height:100%;" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+      <defs><marker id="p19" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,1 L10,6 L0,11 z" fill="#B23A2C"></path></marker></defs>
+      <text x="0" y="16" font-size="24" font-weight="700" letter-spacing="4" fill="#2E7D5B">AGENT 在跑</text>
+      <line x1="0" y1="80" x2="1700" y2="80" stroke="#C9C2B2" stroke-width="2"></line>
+      <g>
+        <circle cx="10" cy="80" r="10" fill="#C9C2B2"></circle>
+        <text x="0" y="60" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="#B0AA9C">前一晚</text>
+        <rect x="0" y="118" width="390" height="180" fill="#FAF7F0" stroke="#D8D2C4"></rect>
+        <text x="34" y="182" font-family="'Noto Serif SC',serif" font-size="32" font-weight="900" fill="#131A17">数据侧已就绪</text>
+        <text x="34" y="230" font-size="24" fill="#6B7A72">公告经审核后进入总库</text>
+        <text x="34" y="268" font-size="24" fill="#6B7A72">同时挂上版本与关联</text>
+        <circle cx="446" cy="80" r="10" fill="#C9C2B2"></circle>
+        <text x="436" y="60" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="#B0AA9C">清晨</text>
+        <rect x="436" y="118" width="390" height="180" fill="#FAF7F0" stroke="#D8D2C4"></rect>
+        <text x="470" y="182" font-family="'Noto Serif SC',serif" font-size="32" font-weight="900" fill="#131A17">判断跟谁有关</text>
+        <text x="470" y="230" font-size="24" fill="#6B7A72">对照企业自己填的业务档案</text>
+        <text x="470" y="268" font-size="24" fill="#6B7A72">相关的经人确认后入私库</text>
+        <circle cx="882" cy="80" r="10" fill="#2E7D5B"></circle>
+        <text x="872" y="60" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="#2E7D5B">上午早些</text>
+        <rect x="872" y="118" width="390" height="180" fill="#E2ECE5" stroke="#B9D4C4"></rect>
+        <text x="906" y="182" font-family="'Noto Serif SC',serif" font-size="32" font-weight="900" fill="#131A17">接上企业与先例</text>
+        <text x="906" y="230" font-size="24" fill="#25473A">当地业务、产品、供应链角色</text>
+        <text x="906" y="268" font-size="24" fill="#25473A">以及做过的类似项目</text>
+        <circle cx="1318" cy="80" r="10" fill="#B23A2C"></circle>
+        <text x="1308" y="60" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="#B23A2C">09:00 前</text>
+        <rect x="1308" y="118" width="392" height="180" fill="#C7DCD0" stroke="#2E7D5B"></rect>
+        <text x="1342" y="182" font-family="'Noto Serif SC',serif" font-size="32" font-weight="900" fill="#131A17">交出初步成果</text>
+        <text x="1342" y="230" font-size="24" fill="#25473A">影响分析 ＋ 待确认清单</text>
+        <text x="1342" y="268" font-size="24" fill="#25473A">Letter 草稿（带引用）</text>
+      </g>
+      <line x1="1504" y1="306" x2="1504" y2="382" stroke="#B23A2C" stroke-width="3" marker-end="url(#p19)"></line>
+      <text x="0" y="470" font-size="24" font-weight="700" letter-spacing="4" fill="#B23A2C">专家接手</text>
+      <rect x="1308" y="392" width="392" height="180" fill="#131A17"></rect>
+      <text x="1342" y="456" font-family="'Noto Serif SC',serif" font-size="32" font-weight="900" fill="#FFFFFF">09:00 审核并确认</text>
+      <text x="1342" y="504" font-size="24" fill="rgba(255,255,255,.75)">审适用性判断、盯例外情况</text>
+      <text x="1342" y="542" font-size="24" fill="rgba(255,255,255,.75)">把好最后对外的口径</text>
+      <path d="M1302,482 L150,482 L150,306" fill="none" stroke="#B23A2C" stroke-width="3" stroke-dasharray="9 9" marker-end="url(#p19)"></path>
+      <text x="200" y="458" font-size="26" font-weight="700" fill="#B23A2C">专家的修改写回记忆，下一次不再犯同样的错</text>
+      <text x="200" y="530" font-size="24" fill="#B0AA9C">过去：先得有人刷到这条消息。晚看两天，留给客户的时间就少两天</text>
+    </svg>
+  </div>
+</section>
+
+<section data-label="交付物" data-screen-label="20 交付物" data-speaker-notes="九点专家看到的，是这两样东西。【放截图】左边是法规影响分析，右边是按以前项目模板准备好的 Letter 草稿。Agent 交出的是初稿和待确认清单；专家审的是适用性、例外和对外口径。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">20 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">交到你手上的，是这两样</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">Agent 交初稿与待确认清单，<br>专家审适用性、例外和口径</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:320px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:2px solid #131A17;padding-bottom:14px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:#B23A2C;">01</div><div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">法规影响分析</div></div>
+      <div style="flex:1;background:#FAF7F0;border:1px solid #D8D2C4;"><image-slot id="v2-shot-impact" shape="rect" fit="contain" placeholder="拖入影响分析截图"></image-slot></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:2px solid #131A17;padding-bottom:14px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:#B23A2C;">02</div><div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">Letter ／ 说明草稿</div></div>
+      <div style="flex:1;background:#FAF7F0;border:1px solid #D8D2C4;"><image-slot id="v2-shot-letter" shape="rect" fit="contain" placeholder="拖入 Letter 草稿截图"></image-slot></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="重新分工" data-screen-label="21 重新分工" data-speaker-notes="所以 Agent 带来的不是无人化，是重新分工。这里我想把话说明白：把它当同事，说的是协作方式，不是把责任交出去。它的权限是定死的，可读全部法规库，但对外输出必须经专家审核，最终的专业判断和合规责任始终在人。持续盯网站、整理关联材料、跨文件比对、找出信息缺口、备初稿、追进度，这些交给它。复杂的适用性判断、灰色地带、跟客户和监管机构打交道、最后拍板，这些还是人的。这个分工对企业还有另一层意义：过去很多关键能力，只装在少数几位资深同事的脑子里，项目一多，他们就是瓶颈。Agent 取代不了这几位专家，它做的是把专家的时间从重复劳动里捞出来。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">叁</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">人机协作：一件合规工作怎么完成</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">21 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">不是无人化，是重新分工</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">可核查的交给它，<br>需担责的留给人</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:320px;bottom:200px;display:grid;grid-template-columns:1fr 1fr;">
+    <div style="background:#E2ECE5;border-top:6px solid #2E7D5B;padding:38px 48px;display:flex;flex-direction:column;gap:26px;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#1E5941;">Agent 更适合</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;font-size:27px;color:#25473A;">
+        <div>持续监测</div><div>整理关联资料</div>
+        <div>跨文件比较</div><div>识别信息缺口</div>
+        <div>准备初稿和清单</div><div>追踪进度</div>
+      </div>
+      <div style="margin-top:auto;font-size:24px;color:#2E7D5B;">重复、可核查</div>
+    </div>
+    <div style="background:#131A17;border-top:6px solid #B23A2C;padding:38px 48px;display:flex;flex-direction:column;gap:26px;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:900;color:#E07A63;">专家更适合</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;font-size:27px;color:rgba(255,255,255,.92);">
+        <div>复杂企业情境</div><div>灰色地带和例外</div>
+        <div>审核高风险结论</div><div>与客户和监管沟通</div>
+        <div>最终决定</div><div>教会 Agent 新经验</div>
+      </div>
+      <div style="margin-top:auto;font-size:24px;color:#8FB3A2;">判断、需担责</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:110px;font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;line-height:1.6;">它的权限是定死的：可读全部法规库，<strong style="color:#B23A2C;">对外输出必须经专家审核</strong>。</div>
+  <div style="position:absolute;left:110px;right:110px;bottom:60px;font-size:25px;color:#6B7A72;">过去关键能力只装在几位资深同事脑子里，项目一多他们就是瓶颈。Agent 做的是把他们的时间捞出来。</div>
+</section>
+
+<section data-label="章节 肆" data-screen-label="22 章节肆" data-speaker-notes="最后一部分：它怎么自己长本事，人在哪些地方必须介入，以及它最终帮我们做什么。" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;right:60px;top:-80px;font-family:'Noto Serif SC',serif;font-size:760px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;">肆</div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:6px;color:#6F8F80;">CHAPTER FOUR</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">22 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;bottom:150px;display:flex;flex-direction:column;gap:34px;">
+    <div style="width:88px;height:6px;background:#B23A2C;"></div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:88px;font-weight:900;color:#FFFFFF;line-height:1.2;">Agent 时代与团队沉淀</div>
+    <div style="font-size:28px;color:#8FB3A2;">它应该成长，但不能在后台随意改变自己</div>
+  </div>
+</section>
+
+<section data-label="受控成长" data-screen-label="23 受控成长" data-speaker-notes="我们当然希望 Agent 越用越好。但有一条边界：它不能在后台悄悄改变自己。举个例子。某次分析它漏了一项豁免条件，专家改了。系统会把这次修改记下来，再往前提炼一步：以后遇到类似情况，先确认哪些产品信息，哪些条件不满足就不能下结论。但这条经验能不能长期用？只对这一家客户有效，还是全团队通用？必须专家审核。审核通过，它才进长期记忆和工作规则。为什么这么谨慎？一次答错，只影响一个项目。一条错误的长期记忆，会影响后面所有项目。所以每条记忆都要有来历：谁教的，什么时候，适用范围多大，审没审过。用户随时能看到 Agent 记了什么，不对的可以改，也可以删。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">肆</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">Agent 时代与团队沉淀</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">23 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">被纠正一次，不等于就能改规矩</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">它可以越用越准，<br>但每条经验都要先过人这一关</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:330px;height:300px;" data-om-raster="">
+    <svg viewBox="0 0 1700 300" style="width:100%;height:100%;" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+      <defs>
+        <marker id="p23" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,1 L10,6 L0,11 z" fill="#2E7D5B"></path></marker>
+        <marker id="p23b" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,1 L10,6 L0,11 z" fill="#C9C2B2"></path></marker>
+      </defs>
+      <g text-anchor="middle" font-size="26" font-weight="700" fill="#131A17">
+        <rect x="0" y="20" width="250" height="120" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="125" y="88">完成任务</text>
+        <rect x="286" y="20" width="250" height="120" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="411" y="88">专家修改</text>
+        <rect x="572" y="20" width="250" height="120" fill="#E2ECE5" stroke="#B9D4C4"></rect><text x="697" y="74">提炼候选</text><text x="697" y="110">经验</text>
+        <polygon points="858,80 908,20 1062,20 1112,80 1062,140 908,140" fill="#B23A2C"></polygon><text x="985" y="74" fill="#FFFFFF">人工审核</text><text x="985" y="110" fill="rgba(255,255,255,.8)" font-size="24">关卡</text>
+        <rect x="1148" y="20" width="250" height="120" fill="#C7DCD0" stroke="#2E7D5B"></rect><text x="1273" y="74">写入长期记忆</text><text x="1273" y="110">或工作规则</text>
+        <rect x="1434" y="20" width="266" height="120" fill="#FAF7F0" stroke="#D8D2C4"></rect><text x="1567" y="74">历史案例</text><text x="1567" y="110">回归验证</text>
+      </g>
+      <g stroke="#2E7D5B" stroke-width="3" marker-end="url(#p23)">
+        <line x1="252" y1="80" x2="280" y2="80"></line><line x1="538" y1="80" x2="566" y2="80"></line><line x1="824" y1="80" x2="852" y2="80"></line><line x1="1114" y1="80" x2="1142" y2="80"></line><line x1="1400" y1="80" x2="1428" y2="80"></line>
+      </g>
+      <path d="M1567,146 L1567,230 L125,230 L125,146" fill="none" stroke="#C9C2B2" stroke-width="3" stroke-dasharray="9 9" marker-end="url(#p23b)"></path>
+      <text x="850" y="272" text-anchor="middle" font-size="25" fill="#8A8578">这条经验只对这家客户有效，还是全团队通用？由人来定</text>
+    </svg>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:130px;display:flex;flex-direction:column;gap:22px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:#131A17;">每条记忆都要有来历</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;">
+      <div style="background:#EAE5D9;padding:28px 34px;font-size:28px;font-weight:700;color:#3A4A42;">谁教的</div>
+      <div style="background:#EAE5D9;padding:28px 34px;font-size:28px;font-weight:700;color:#3A4A42;">什么时候</div>
+      <div style="background:#EAE5D9;padding:28px 34px;font-size:28px;font-weight:700;color:#3A4A42;">适用范围多大</div>
+      <div style="background:#B23A2C;padding:28px 34px;font-size:28px;font-weight:700;color:#FFFFFF;">审核状态</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:64px;font-size:25px;color:#6B7A72;">一次答错只影响一个项目；一条错误的长期记忆，会影响后面所有项目。用户随时可以查看、修改、删除，操作全量留痕。</div>
+</section>
+
+<section data-label="Skill" data-screen-label="24 Skill" data-speaker-notes="上一页讲的是它怎么长本事。这一页讲人在什么地方介入。我们的做法叫 Skill，就是一段被专家确认过的做事方法。注意，它不是提示词技巧，是把我们这儿遇到这类问题是怎么办的写成机器能执行的步骤：先查什么、必须追问什么、什么条件不满足就不能下结论、最后按什么格式产出。三件事。第一，写下来。第二，挂上去：Skill 绑在具体场景上，某一类法规、某个客户、某种交付物，不全局生效。第三，管起来：有版本，有适用范围，可以停用，改了是谁改的一目了然。为什么这件事重要？模型的能力是通用的，谁都买得到；Skill 才是你们团队特有的那一部分。【这页是第四部分的重点，可以多停一会儿】" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#B23A2C;">肆</div><div style="font-size:24px;letter-spacing:4px;color:#8A8578;">Agent 时代与团队沉淀</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">24 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:176px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:66px;font-weight:900;color:#131A17;line-height:1.2;">把「我们这儿是怎么做的」写下来</div>
+    <div style="font-size:26px;color:#8A8578;text-align:right;line-height:1.6;flex:none;">不是提示词技巧，<br>是能被执行、被追责的步骤</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:330px;bottom:290px;display:grid;grid-template-columns:1fr 1fr 1fr;">
+    <div style="border-top:6px solid #131A17;padding:36px 52px 0 0;display:flex;flex-direction:column;gap:22px;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#D8D2C4;line-height:1;">壹</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#131A17;">写下来</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">专家不只是改掉这一次的答案，而是把这次判断的过程写成步骤：先查什么、必须追问什么、什么条件不满足就不能下结论。</div>
+    </div>
+    <div style="border-top:6px solid #131A17;padding:36px 52px 0 52px;display:flex;flex-direction:column;gap:22px;border-left:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#D8D2C4;line-height:1;">贰</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#131A17;">挂上去</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">Skill 绑在具体场景上：某一类法规、某个客户、某种交付物。不全局生效，所以不会互相干扰。</div>
+    </div>
+    <div style="border-top:6px solid #B23A2C;padding:36px 0 0 52px;display:flex;flex-direction:column;gap:22px;border-left:1px solid #D8D2C4;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:84px;font-weight:900;color:#E6D3CB;line-height:1;">叁</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:#B23A2C;">管起来</div>
+      <div style="font-size:26px;color:#3A4A42;line-height:1.9;">有版本、有适用范围、可以停用。谁改的、什么时候改的一目了然，随时能退回上一版。</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:110px;background:#131A17;padding:36px 48px;box-sizing:border-box;font-family:'Noto Serif SC',serif;font-size:38px;font-weight:700;color:#FFFFFF;">十几年攒下来的做法，以前只在老同事脑子里；写成 Skill，整个团队才用得上</div>
+  <div style="position:absolute;left:110px;right:110px;bottom:60px;font-size:24px;color:#8A8578;">写下来的东西可以交接、可以复用，也可以被同事质疑和修订。</div>
+</section>
+
+<section data-label="决策智能" data-screen-label="25 决策智能" data-speaker-notes="回到今天的题目，从法规知识到决策智能。这中间缺的，真不是一个更强的模型。模型会越来越强，也越来越便宜，谁都买得到。买不到的，是一家企业攒了很多年的东西：每天维护的数据，一个个项目里攒下的经验，对客户的理解，还有一套被反复验证过的做事方法。瑞欧现在做的，是让这些东西不只躺在数据库里，也不只留在几位专家的脑子里，而是能被 Agent 接过去，在人和 Agent 的长期协作里继续往下攒。AI 不会替代法规专家。它真正的价值，是让专家攒了半辈子的本事，被更多人、更稳定地用起来。明天早上，咖啡还是那杯咖啡，官网还是那些官网。不同的是，等你坐下来的时候，可能已经有一位同事，替你把全世界看了一遍。谢谢大家。【最后两段放慢，咖啡这句是全场的落点，说完停一拍再说谢谢】" style="position:relative;background:#131A17;overflow:hidden;">
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="display:flex;align-items:baseline;gap:18px;"><div style="font-family:'Noto Serif SC',serif;font-size:26px;font-weight:900;color:#E07A63;">肆</div><div style="font-size:24px;letter-spacing:4px;color:rgba(255,255,255,.5);">Agent 时代与团队沉淀</div></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.35);">25 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="position:absolute;left:110px;top:200px;width:1000px;display:flex;flex-direction:column;gap:30px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:82px;font-weight:900;color:#FFFFFF;line-height:1.22;">缺的从来不是<br>更强的模型</div>
+    <div style="font-size:30px;color:#8FB3A2;line-height:1.7;">是每天维护的数据、一个个项目攒下的经验，<br>和一套被反复验证过的做事方法。</div>
+  </div>
+  <div style="position:absolute;left:110px;width:1000px;top:596px;display:flex;flex-direction:column;">
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);display:flex;align-items:baseline;gap:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#8FB3A2;width:34px;flex:none;">01</div><div style="font-size:30px;color:#FFFFFF;">让 Agent 看见持续变化的全球法规</div></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);display:flex;align-items:baseline;gap:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#8FB3A2;width:34px;flex:none;">02</div><div style="font-size:30px;color:#FFFFFF;">让它记住企业、团队口径和过去的项目</div></div>
+    <div style="padding:24px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);display:flex;align-items:baseline;gap:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#8FB3A2;width:34px;flex:none;">03</div><div style="font-size:30px;color:#FFFFFF;">让知识变成判断、行动和可以审核的结果</div></div>
+  </div>
+  <div style="position:absolute;left:110px;width:1000px;bottom:84px;border-left:6px solid #B23A2C;padding-left:32px;font-family:'Noto Serif SC',serif;font-size:36px;font-weight:700;color:#FFFFFF;line-height:1.6;">明天早上，咖啡还是那杯咖啡。<br>不同的是，可能已经有一位同事，替你把全世界看了一遍。</div>
+  <div style="position:absolute;left:1250px;right:110px;top:210px;bottom:120px;" data-om-raster="">
+    <svg viewBox="0 0 560 750" style="width:100%;height:100%;" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+      <text x="280" y="30" text-anchor="middle" font-size="24" fill="rgba(255,255,255,.45)">每一层都要人来维护和验证</text>
+      <g text-anchor="middle">
+        <rect x="0" y="610" width="126" height="140" fill="rgba(255,255,255,.08)"></rect><text x="63" y="692" font-size="25" font-weight="700" fill="rgba(255,255,255,.6)">数据</text>
+        <rect x="144" y="470" width="126" height="280" fill="rgba(255,255,255,.13)"></rect><text x="207" y="540" font-size="25" font-weight="700" fill="rgba(255,255,255,.78)">结构化</text><text x="207" y="574" font-size="25" font-weight="700" fill="rgba(255,255,255,.78)">知识</text>
+        <rect x="288" y="330" width="126" height="420" fill="#2E7D5B"></rect><text x="351" y="400" font-size="25" font-weight="700" fill="#FFFFFF">情境</text><text x="351" y="434" font-size="25" font-weight="700" fill="#FFFFFF">判断</text>
+        <rect x="432" y="190" width="126" height="560" fill="#B23A2C"></rect><text x="495" y="260" font-size="25" font-weight="700" fill="#FFFFFF">决策</text><text x="495" y="294" font-size="25" font-weight="700" fill="#FFFFFF">智能</text>
+      </g>
+      <path d="M40,590 C170,520 320,400 480,170" fill="none" stroke="#8FB3A2" stroke-width="3" stroke-dasharray="10 10"></path>
+    </svg>
+  </div>
+</section>
+
+<section data-label="感谢" data-screen-label="26 感谢" data-speaker-notes="谢谢大家，欢迎交流提问。" style="position:relative;background:#F2EEE6;overflow:hidden;">
+  <div style="position:absolute;left:0;top:0;bottom:0;width:24px;background:#B23A2C;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:86px;display:flex;align-items:baseline;justify-content:space-between;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:6px;color:#8A8578;">THANK YOU · Q &amp; A</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#B0AA9C;">26 / 26</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;top:130px;height:1px;background:#D8D2C4;"></div>
+  <div style="position:absolute;left:110px;top:340px;display:flex;flex-direction:column;gap:40px;">
+    <div style="font-family:'Noto Serif SC',serif;font-size:150px;font-weight:900;color:#131A17;letter-spacing:24px;line-height:1;">感　谢</div>
+    <div style="width:88px;height:6px;background:#B23A2C;"></div>
+    <div style="font-size:30px;color:#6B7A72;line-height:1.8;">欢迎会后交流：数据怎么维护、Skill 怎么定、<br>企业私库怎么落地。</div>
+  </div>
+  <div style="position:absolute;left:110px;right:110px;bottom:96px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#131A17;">朱海东　Raymond Zhu</div>
+      <div style="font-size:24px;color:#8A8578;">瑞欧科技 REACH24H Consulting Group</div>
+    </div>
+    <div style="font-size:24px;color:#8A8578;text-align:right;line-height:1.6;">第 18 届全球化学品法规年度论坛<br>CRAC 2026</div>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>
